@@ -82,7 +82,7 @@ async def set_user_active(tg_id: int) -> None:
             await session.commit()
 
 
-async def get_users_role(role: str) -> list[User]:
+async def get_users_role(role: str):
     """
     Получение списка пользователей с заданной ролью
     :param role:
@@ -122,7 +122,7 @@ async def get_card(id_: int) -> Combination:
         return await session.scalar(select(Combination).filter(Combination.id == id_))
 
 
-async def get_cards() -> list[Combination]:
+async def get_cards():
     """
     Получение списка карт таро
     :return:
